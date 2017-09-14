@@ -13,4 +13,4 @@ Run these commands from the root of the project.
     - `npm run build`
 - Start the ExpressJS app:
     - `npm run start`
-- For more granular scripts, check the package.json file.
+- For other scripts, check the package.json file.

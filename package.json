@@ -21,13 +21,15 @@
     "build": "npm run build:css && npm run build:html && npm run build:js",
     "build:css": "lessc public/stylesheets/style.less > public/stylesheets/style.css",
     "build:html": "jade views/index.jade --out dist",
-    "build:js": "browserify bin/www > dist/index.js"
+    "build:js": "browserify bin/www > dist/index.js && browserify public/js/main.js > public/js/bundle.js"
   },
   "dependencies": {
+    "backbone": "1.3.3",
     "body-parser": "1.17.2",
     "cookie-parser": "1.4.3",
     "debug": "~2.6.3",
     "express": "4.15.4",
+    "jquery": "3.2.1",
     "morgan": "~1.8.1",
     "serve-favicon": "~2.4.2",
     "underscore": "1.8.3"

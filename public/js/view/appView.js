@@ -1,5 +1,6 @@
 var $ = require('jquery');
 var Backbone = require('backbone');
+var templates = require('./appView.html');
 
 var AppView = Backbone.View.extend({
     className: 'app-view',
@@ -7,7 +8,8 @@ var AppView = Backbone.View.extend({
     initialize: function() {},
 
     render: function() {
-        this.$el.html("<h1>[UNDER CONSTRUCTION]</h1>");
+        var html = templates.appView({ title: "My App" });
+        this.$el.html(html);
         return this;
     }
 });

@@ -13,4 +13,6 @@ Run these commands from the root of the project.
     - `npm run build`
 - Start the ExpressJS app:
     - `npm run start`
+- Build and deploy to the `dist` directory:
+    - `npm run deploy`
 - For other scripts, check the package.json file.

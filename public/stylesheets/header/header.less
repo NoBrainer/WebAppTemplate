@@ -1,0 +1,29 @@
+.header-view {
+  background-color: @header-background;
+  color: @header-text-color;
+
+  a {
+    text-decoration: none;
+  }
+
+  .logo {
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    padding-right: 30px;
+    font-size: 30px;
+  }
+
+  .tabs {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .tab {
+    padding: @padding-large;
+
+    &.active {
+      background-color: @header-background-active;
+    }
+  }
+}

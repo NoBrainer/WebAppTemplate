@@ -15,7 +15,7 @@ var ContentView = Backbone.View.extend({
     render: function() {
         this.cleanup();
 
-        var html = templates.contentView();
+        var html = templates.scaffold();
         this.$el.html(html);
 
         switch(AppStateModel.getMode()) {

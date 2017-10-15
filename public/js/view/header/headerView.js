@@ -11,7 +11,7 @@ var HeaderView = Backbone.View.extend({
     },
 
     render: function() {
-        var html = templates.headerView();
+        var html = templates.scaffold();
         this.$el.html(html);
 
         this.selectTab();

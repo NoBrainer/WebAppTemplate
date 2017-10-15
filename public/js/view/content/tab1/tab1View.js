@@ -4,7 +4,7 @@ var Tab1View = Backbone.View.extend({
     className: 'tab1-view',
 
     render: function() {
-        var html = templates.tab1View();
+        var html = templates.scaffold();
         this.$el.html(html);
 
         return this;

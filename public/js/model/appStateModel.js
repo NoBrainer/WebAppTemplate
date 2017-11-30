@@ -1,6 +1,8 @@
 var AppStateModel = Backbone.Model.extend({
     defaults: {
-        mode: null
+        mode: null,         //String
+        section: null,      //String
+        tab: null           //String
     },
 
     initialize: function(attrs, options) {
@@ -20,14 +22,51 @@ var AppStateModel = Backbone.Model.extend({
         return this;
     },
 
-    setup: function() {
-        //TODO: setup things
-        this.initialSetupDeferred.resolve();
-        return this.getInitialSetupPromise();
+    getOptions: function() {
+        return this.get(this.fields.OPTIONS);
+    },
+
+    setOptions: function(options) {
+        this.set(this.fields.OPTIONS, options);
+        return this;
+    },
+
+    setPage: function(mode, tab, section, options) {
+        this.set({
+            mode: mode,
+            tab: tab || null,
+            section: section || null,
+            options: _.isObject(options) ? options : null
+        });
+        return this;
+    },
+
+    getSection: function() {
+        return this.get(this.fields.SECTION);
+    },
+
+    setSection: function(section, options) {
+        this.set({
+            section: section || null,
+            options: _.isObject(options) ? options : null
+        });
+        return this;
+    },
+
+    getTab: function() {
+        return this.get(this.fields.TAB);
+    },
+
+    setTab: function(tab) {
+        this.set(this.fields.TAB, tab);
+        return this;
     },
 
     fields: {
-        MODE: 'mode'
+        MODE: 'mode',
+        OPTIONS: 'options',
+        SECTION: 'section',
+        TAB: 'tab'
     },
 
     modes: {

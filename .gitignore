@@ -1,0 +1,11 @@
+
+.idea/**
+node_modules/**
+public/fonts/fontawesome-webfont.eot
+public/fonts/fontawesome-webfont.svg
+public/fonts/fontawesome-webfont.ttf
+public/fonts/fontawesome-webfont.woff
+public/fonts/fontawesome-webfont.woff2
+public/fonts/FontAwesome.otf
+public/js/bundle.js
+npm-debug.log

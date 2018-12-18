@@ -1,7 +1,7 @@
 var templates = require('./tab1View.html');
 
 var Tab1View = Backbone.View.extend({
-    className: 'tab1-view',
+    className: 'tab1View',
 
     render: function() {
         var html = templates.scaffold();

@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 var app = require('../app');
-var debug = require('debug')('myapp2:server');
+var debug = require('debug')('webapp:server');
 var http = require('http');
 
 var defaultConfig = {
@@ -12,7 +12,7 @@ var defaultConfig = {
 // Get the config from file or fallback to the default
 var config;
 try {
-    config = require('../../webappTemplateConfig');
+    config = require('../../webappConfig');
 } catch(e1) {
     try {
         config = require('../config');
@@ -40,7 +40,6 @@ server.on('listening', onListening);
 /**
  * Normalize a port into a number, string, or false.
  */
-
 function normalizePort(val) {
     var port = parseInt(val, 10);
 
@@ -101,4 +100,5 @@ function onListening() {
     var addr = server.address();
     var bind = typeof addr === 'string' ? 'pipe ' + addr : 'port ' + addr.port;
     debug('Listening on ' + bind);
+    console.log('Listening on ' + bind);
 }

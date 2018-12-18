@@ -2,7 +2,7 @@ var AppStateModel = require('../../model/appStateModel');
 var templates = require('./headerView.html');
 
 var HeaderView = Backbone.View.extend({
-    className: 'page-container header-view',
+    className: 'g_pageContainer headerView',
 
     initialize: function() {
         this.listenTo(AppStateModel, 'change:' + AppStateModel.fields.MODE, function(model, mode) {

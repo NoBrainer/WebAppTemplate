@@ -1,7 +1,20 @@
 doctype html
 html
     head
-        title= title
-        link(rel='stylesheet', href='/stylesheets/style.css')
+        meta(charset='UTF-8')
+        meta(name='viewport' content='width=device-width, initial-scale=1.0')
+        title='WebAppTemplate'
+        link(rel='shortcut icon' href='/resources/favicon.ico' type='image/x-icon')
+        link(rel='stylesheet', href='/css/style.min.css')
     body
-        block content
+        div(id='header')
+            div(class='g_pageContainer headerView')
+                div(class='g_pageContainer')
+                    div(class='logo')
+                        a(href='/#home') WebAppTemplate
+        div(id='content')
+            div(class='g_pageContainer contentView')
+                div(class='g_pageContainer')
+                    div(class='g_section')
+                        div(class='g_card')
+                            block content

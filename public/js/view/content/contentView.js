@@ -1,10 +1,9 @@
 var AppStateModel = require('../../model/appStateModel');
 var HomeView = require('../../view/content/home/homeView');
 var Tab1View = require('../../view/content/tab1/tab1View');
-var templates = require('./contentView.html');
 
 var ContentView = Backbone.View.extend({
-    className: 'page-container content-view',
+    className: 'g_pageContainer contentView',
 
     initialize: function() {
         this.listenTo(AppStateModel, 'change:' + AppStateModel.fields.MODE, function(model, mode) {
@@ -15,9 +14,6 @@ var ContentView = Backbone.View.extend({
     render: function() {
         this.cleanup();
 
-        var html = templates.scaffold();
-        this.$el.html(html);
-
         switch(AppStateModel.getMode()) {
             case AppStateModel.modes.HOME:
                 this.childView = new HomeView(); break;
@@ -26,7 +22,7 @@ var ContentView = Backbone.View.extend({
             default:
                 return this;
         }
-        this.$('.content-wrapper').html(this.childView.render().$el);
+        this.$el.html(this.childView.render().$el);
 
         return this;
     },

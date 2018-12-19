@@ -7,14 +7,17 @@ html
         link(rel='shortcut icon' href='/resources/favicon.ico' type='image/x-icon')
         link(rel='stylesheet', href='/css/style.min.css')
     body
-        div(id='header')
-            div(class='g_pageContainer headerView')
-                div(class='g_pageContainer')
-                    div(class='logo')
-                        a(href='/#home') WebAppTemplate
-        div(id='content')
-            div(class='g_pageContainer contentView')
-                div(class='g_pageContainer')
-                    div(class='g_section')
-                        div(class='g_card')
-                            block content
+        div(class='appView')
+            div(id='header')
+                div(class='g_pageContainer headerView')
+                    div(class='g_pageContainer headerWrapper')
+                        div(class='logo')
+                            a(href='/#home') WebAppTemplate
+                        div(class='tabs')
+                            a(class='tab api active' href='api') API
+            div(id='content')
+                div(class='g_pageContainer contentView')
+                    div(class='g_pageContainer')
+                        div(class='g_section')
+                            div(class='g_card')
+                                block content

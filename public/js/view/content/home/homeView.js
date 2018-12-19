@@ -1,7 +1,7 @@
 var templates = require('./homeView.html');
 
 var HomeView = Backbone.View.extend({
-    className: 'homeView',
+    className: 'g_pageContainer homeView',
 
     render: function() {
         var html = templates.scaffold();

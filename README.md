@@ -1,18 +1,23 @@
 # WebAppTemplate
 
 ## Dev Environment Setup
-- Install npm and node
+- Install git, npm, and nodejs
 - Download this repository
-- `npm install package.json`
 
 ## Build Scripts
 Run these commands from the root of the project.
-- Watch and build all js/less/html:
+- Download libraries:
+    - `npm install`
+- Build all js/css, watch for changes, start the ExpressJS app, restart on change:
     - `npm run watch`
-- Build all js/less/html:
+- Build all js/css:
     - `npm run build`
 - Start the ExpressJS app:
     - `npm run start`
-- Build and deploy to the `dist` directory:
-    - `npm run deploy`
+- Install the config file for overriding:
+    - `npm run install:config`
 - For other scripts, check the package.json file.
+
+## Resources
+- font-awesome
+- game-icons.net

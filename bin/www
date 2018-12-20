@@ -1,10 +1,11 @@
 #!/usr/bin/env node
+'use strict';
 
 const debug = require('debug')('webapp:server');
 const http = require('http');
 
 const app = require('../app');
-const config = require('../scripts/getConfig');
+const config = require('../scripts/readConfig');
 
 // Set the port from the config
 const port = normalizePort(config.port);
@@ -27,17 +28,8 @@ server.on('listening', onListening);
  */
 function normalizePort(val) {
     const port = parseInt(val, 10);
-
-    if (isNaN(port)) {
-        // named pipe
-        return val;
-    }
-
-    if (port >= 0) {
-        // port number
-        return port;
-    }
-
+    if (isNaN(port)) return val;
+    if (port >= 0) return port;
     return false;
 }
 
@@ -46,10 +38,7 @@ function normalizePort(val) {
  */
 function normalizeEnv(val) {
     let env = val || 'dev';
-
-    if (env !== 'dev' && env !== 'prod') {
-        env = 'dev';
-    }
+    if (env !== 'dev' && env !== 'prod') return 'dev';
     return env;
 }
 

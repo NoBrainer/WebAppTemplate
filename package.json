@@ -44,7 +44,7 @@
     "setup:html": "copyfiles -f \"./public/*.html\" \"./build/public/\"",
     "setup:resources": "cpr \"public/resources\" \"build/public/resources\"",
     "postsetup:resources": "svgstore -o build/public/resources/icons/icons.svg public/resources/icons/**/*.svg",
-    "kill:server": "node scripts/kill.js",
+    "kill:server": "node scripts/killServer.js",
     "watch:all": "parallelshell \"npm run watch:css -s\" \"npm run watch:js -s\" \"npm run watch:server -s\"",
     "watch:css": "watch \"npm run build:css\" public/css",
     "watch:js": "watch \"npm run build:js\" public/js",

@@ -1,4 +1,5 @@
-_ = require('underscore');
+#!/usr/bin/env node
+'use strict';
 
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');

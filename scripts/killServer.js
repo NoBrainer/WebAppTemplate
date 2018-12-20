@@ -1,5 +1,8 @@
+#!/usr/bin/env node
+'use strict';
+
 const fkill = require('fkill');
-const config = require('./getConfig');
+const config = require('./readConfig');
 
 fkill(':'+config.port, { force: true })
     .then(() => {

@@ -1,3 +1,6 @@
+#!/usr/bin/env node
+'use strict';
+
 let defaultConfig = {
     env: 'dev',
     port: 3000

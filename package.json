@@ -19,6 +19,7 @@
     "mkdirp": "0.5.1",
     "nodemon": "1.18.9",
     "parallelshell": "3.0.1",
+    "ps-node": "0.1.6",
     "rimraf": "2.6.2",
     "svgstore-cli": "1.3.1",
     "uglifycss": "0.0.29",
@@ -26,8 +27,8 @@
     "watch": "1.0.2"
   },
   "scripts": {
-    "start": "npm run kill:server && nodemon ./bin/www",
     "watch": "npm run build && npm run watch:all",
+    "server": "npm run kill:server && nodemon ./bin/www",
     "build": "npm run setup && npm run build:all",
     "----------------------------------------------------------": "",
     "prebuild": "npm install -s",
@@ -44,6 +45,7 @@
     "setup:html": "copyfiles -f \"./public/*.html\" \"./build/public/\"",
     "setup:resources": "cpr \"public/resources\" \"build/public/resources\"",
     "postsetup:resources": "svgstore -o build/public/resources/icons/icons.svg public/resources/icons/**/*.svg",
+    "kill:all": "node scripts/killAll.js",
     "kill:server": "node scripts/killServer.js",
     "watch:all": "parallelshell \"npm run watch:css -s\" \"npm run watch:js -s\" \"npm run watch:server -s\"",
     "watch:css": "watch \"npm run build:css\" public/css",

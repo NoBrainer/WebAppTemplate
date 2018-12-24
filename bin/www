@@ -6,6 +6,7 @@ const http = require('http');
 
 const app = require('../app');
 const config = require('../scripts/readConfig');
+const prefix = require('../scripts/time-prefix');
 
 // Set the port from the config
 const port = normalizePort(config.port);
@@ -55,11 +56,11 @@ function onError(error) {
     // handle specific listen errors with friendly messages
     switch(error.code) {
         case 'EACCES':
-            console.error(bind + ' requires elevated privileges');
+            console.error(prefix + bind + ' requires elevated privileges');
             process.exit(1);
             break;
         case 'EADDRINUSE':
-            console.error(bind + ' is already in use');
+            console.error(prefix + bind + ' is already in use');
             process.exit(1);
             break;
         default:
@@ -74,5 +75,5 @@ function onListening() {
     const addr = server.address();
     const bind = typeof addr === 'string' ? 'pipe ' + addr : 'port ' + addr.port;
     debug('Listening on ' + bind);
-    console.log('Listening on ' + bind);
+    console.log(prefix + 'Listening on ' + bind);
 }

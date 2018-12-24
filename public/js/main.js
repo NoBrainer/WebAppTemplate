@@ -8,16 +8,7 @@ window._ = _;
 window.Backbone = Backbone;
 
 // Setup the global config
-var Config;
-// try {
-//     Config = require('../../../webappTemplateConfig');
-// } catch(e1) {
-    try {
-        Config = require('../../config');
-    } catch(e2) {
-        Config = { env: 'dev', port: 3000 };
-    }
-// }
+var Config = require('../../scripts/readConfig');
 window.Config = Config;
 
 // Require singletons to make sure they're initialized

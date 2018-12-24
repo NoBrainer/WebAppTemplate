@@ -1,17 +1,17 @@
 #!/usr/bin/env node
 'use strict';
 
-let defaultConfig = {
+var defaultConfig = {
     env: 'dev',
     port: 3000
 };
 
-let config;
+var config;
 try {
     config = require('../../webappConfig');
 } catch(e1) {
     try {
-        config = require('../config');
+        config = require('../webappConfig');
     } catch(e2) {
         config = defaultConfig;
     }

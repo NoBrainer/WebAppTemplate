@@ -44,7 +44,7 @@
     "watch:js": "watch \"npm run build:js\" public/js",
     "watch:server": "npm run kill:server && nodemon --watch api --watch app.js ./bin/www",
     "--- MISCELLANEOUS SCRIPTS-------------------------------------------------": "",
-    "install:config": "copyfiles -f config.js ../webappConfig.js",
+    "install:config": "copyfiles -f webappConfig.js ../",
     "kill:all": "node scripts/killAll.js",
     "kill:server": "node scripts/killServer.js"
   },

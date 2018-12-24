@@ -1,8 +1,10 @@
-var ExportedClass = module.exports = Backbone.Model.extend();
+'use strict';
 
-var AppStateModel = require('./model/appStateModel');
+const ExportedClass = module.exports = Backbone.Model.extend();
 
-var Router = Backbone.Router.extend({
+const AppStateModel = require('./model/appStateModel');
+
+const Router = Backbone.Router.extend({
     initialize: function() {
         this.route(/^.*/, 'goDefault', this.goDefault);
 
@@ -20,27 +22,27 @@ var Router = Backbone.Router.extend({
     },
 
     goHome: function(tab, section, params) {
-        var options = this.parsePathParams(params);
+        let options = this.parsePathParams(params);
         AppStateModel.setMode(AppStateModel.modes.HOME, tab, section, options);
     },
 
     goTab1: function(tab, section, params) {
-        var options = this.parsePathParams(params);
+        let options = this.parsePathParams(params);
         AppStateModel.setMode(AppStateModel.modes.TAB1, tab, section, options);
     },
 
     parsePathParams: function(params) {
         if (!_.isString(params) || _.isEmpty(params)) return null;
-        var pairs = params.split('&');
-        var obj = {};
+        let pairs = params.split('&');
+        let obj = {};
         _.each(pairs, function(pair) {
-            var split = pair.split('=');
+            let split = pair.split('=');
             obj[split[0]] = split[1] || null;
         });
         return obj;
     }
 });
 
-var singletonInstance = new Router();
+const singletonInstance = new Router();
 _.extend(ExportedClass, singletonInstance);
 ExportedClass.prototype = Router.prototype;

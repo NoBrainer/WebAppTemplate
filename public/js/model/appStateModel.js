@@ -1,6 +1,8 @@
-var ExportedClass = module.exports = Backbone.Model.extend();
+'use strict';
 
-var AppStateModel = Backbone.Model.extend({
+const ExportedClass = module.exports = Backbone.Model.extend();
+
+const AppStateModel = Backbone.Model.extend({
     defaults: {
         mode: null,         //String
         section: null,      //String
@@ -77,6 +79,6 @@ var AppStateModel = Backbone.Model.extend({
     }
 });
 
-var singletonInstance = new AppStateModel();
+const singletonInstance = new AppStateModel();
 _.extend(ExportedClass, singletonInstance);
 ExportedClass.prototype = AppStateModel.prototype;

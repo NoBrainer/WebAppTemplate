@@ -1,15 +1,17 @@
-var ContentView = require('./content/contentView');
-var FooterView = require('./footer/footerView');
-var HeaderView = require('./header/headerView');
-var templates = require('./appView.html');
+'use strict';
 
-var AppView = Backbone.View.extend({
+const ContentView = require('./content/contentView');
+const FooterView = require('./footer/footerView');
+const HeaderView = require('./header/headerView');
+const templates = require('./appView.html');
+
+const AppView = Backbone.View.extend({
     className: 'appView',
 
     render: function() {
         this.cleanup();
 
-        var html = templates.scaffold();
+        let html = templates.scaffold();
         this.$el.html(html);
 
         this.headerView = new HeaderView();

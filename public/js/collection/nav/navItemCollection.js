@@ -1,12 +1,14 @@
-var ExportedClass = module.exports = Backbone.Collection.extend();
+'use strict';
 
-var NavItemModel = require('../../model/nav/navItemModel');
+const ExportedClass = module.exports = Backbone.Collection.extend();
 
-var NavItemCollection = Backbone.Collection.extend({
+const NavItemModel = require('../../model/nav/navItemModel');
+
+const NavItemCollection = Backbone.Collection.extend({
     model: NavItemModel,
 
     getActiveItemModel: function() {
-        var itemModel = this.find(function(navItemModel) {
+        let itemModel = this.find(function(navItemModel) {
             return navItemModel.isActive();
         });
         return itemModel || null;

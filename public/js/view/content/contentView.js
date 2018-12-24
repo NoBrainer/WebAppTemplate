@@ -1,8 +1,10 @@
-var AppStateModel = require('../../model/appStateModel');
-var HomeView = require('../../view/content/home/homeView');
-var Tab1View = require('../../view/content/tab1/tab1View');
+'use strict';
 
-var ContentView = Backbone.View.extend({
+const AppStateModel = require('../../model/appStateModel');
+const HomeView = require('../../view/content/home/homeView');
+const Tab1View = require('../../view/content/tab1/tab1View');
+
+const ContentView = Backbone.View.extend({
     className: 'g_pageContainer contentView',
 
     initialize: function() {

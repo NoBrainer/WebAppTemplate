@@ -1,6 +1,8 @@
-var ExportedClass = module.exports = Backbone.Model.extend();
+'use strict';
 
-var NavItemModel = Backbone.Model.extend({
+const ExportedClass = module.exports = Backbone.Model.extend();
+
+const NavItemModel = Backbone.Model.extend({
     defaults: {
         active: false,
         href: null,

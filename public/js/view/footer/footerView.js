@@ -1,10 +1,12 @@
-var templates = require('./footerView.html');
+'use strict';
 
-var FooterView = Backbone.View.extend({
+const templates = require('./footerView.html');
+
+const FooterView = Backbone.View.extend({
     className: 'g_pageContainer footerView',
 
     render: function() {
-        var html = templates.scaffold();
+        let html = templates.scaffold();
         this.$el.html(html);
 
         return this;

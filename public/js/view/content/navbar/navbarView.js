@@ -1,13 +1,15 @@
-var NavItemCollection = require('../../../collection/nav/navItemCollection');
-var templates = require('./navbarView.html');
+'use strict';
 
-var NavView = Backbone.View.extend({
+const NavItemCollection = require('../../../collection/nav/navItemCollection');
+const templates = require('./navbarView.html');
+
+const NavView = Backbone.View.extend({
     className: 'navbarView',
 
     initialize: function(options) {
         options = options || {};
 
-        var list = options.list || ['NO NAV ITEMS DEFINED'];
+        let list = options.list || ['NO NAV ITEMS DEFINED'];
         this.collection = new NavItemCollection(list, {parse: true});
 
         this.listenTo(this.collection, 'change reset', this.render);
@@ -20,7 +22,7 @@ var NavView = Backbone.View.extend({
     },
 
     renderNavItem: function(navItemModel) {
-        var html = templates.navItem(navItemModel.attributes);
+        let html = templates.navItem(navItemModel.attributes);
         this.$el.append(html);
         return this;
     },

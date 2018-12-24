@@ -1,7 +1,9 @@
-var AppStateModel = require('../../model/appStateModel');
-var templates = require('./headerView.html');
+'use strict';
 
-var HeaderView = Backbone.View.extend({
+const AppStateModel = require('../../model/appStateModel');
+const templates = require('./headerView.html');
+
+const HeaderView = Backbone.View.extend({
     className: 'g_pageContainer headerView',
 
     initialize: function() {
@@ -11,7 +13,7 @@ var HeaderView = Backbone.View.extend({
     },
 
     render: function() {
-        var html = templates.scaffold();
+        let html = templates.scaffold();
         this.$el.html(html);
 
         this.selectTab();

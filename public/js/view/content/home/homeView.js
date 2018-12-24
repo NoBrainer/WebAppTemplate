@@ -1,10 +1,12 @@
-var templates = require('./homeView.html');
+'use strict';
 
-var HomeView = Backbone.View.extend({
+const templates = require('./homeView.html');
+
+const HomeView = Backbone.View.extend({
     className: 'g_pageContainer homeView',
 
     render: function() {
-        var html = templates.scaffold();
+        let html = templates.scaffold();
         this.$el.html(html);
 
         return this;

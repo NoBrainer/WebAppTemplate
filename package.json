@@ -29,7 +29,7 @@
     "--- BUILD SCRIPTS---------------------------------------------------------": "",
     "prebuild": "node scripts/message 'Installing libraries...' && npm install -s && rimraf build",
     "precopy:files": "node scripts/message 'Copying static files...' && mkdirp build/public/fonts && mkdirp build/public/resources",
-    "copy:files": "copyfiles -f node_modules/font-awesome/fonts/* build/public/fonts/ && copyfiles -f public/*.html build/public/ && copyfiles -f public/resources/* build/public/resources/",
+    "copy:files": "copyfiles -f node_modules/font-awesome/fonts/* build/public/fonts/ && copyfiles -f public/*.html build/public/ && copyfiles -f -e public/resources/icons/** public/resources/** build/public/resources/",
     "postcopy:files": "node scripts/message 'Static files done!'",
     "prebuild:css": "node scripts/message 'Building CSS...' && mkdirp build/public/css",
     "build:css": "lessc public/css/main.less > build/public/css/style.css",

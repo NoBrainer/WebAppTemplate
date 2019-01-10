@@ -18,11 +18,15 @@ require('./router');
 require('./model/appStateModel');
 
 const AppView = require('./view/appView');
+const SvgUtil = require('./util/svgUtil');
 
 (function() {
     // Render the app view to the page
     let appView = new AppView();
     $('body').prepend(appView.render().$el);
+
+    // Setup the SVGs inline
+    SvgUtil.setup();
 
     // Start the router
     Backbone.history.start();

@@ -1,8 +1,8 @@
 # WebAppTemplate
 
 ## Dev Environment Setup
-- Install git, npm, and nodejs
-- Download this repository
+- Install git
+- Install nodejs & npm
 
 ## Build Scripts
 Run these commands from the root of the project.

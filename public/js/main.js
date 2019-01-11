@@ -18,8 +18,12 @@ require('./router');
 require('./model/appStateModel');
 
 const AppView = require('./view/appView');
+const SvgUtil = require('./util/svgUtil');
 
 (function() {
+    // Setup the SVGs inline
+    SvgUtil.setup();
+
     // Render the app view to the page
     let appView = new AppView();
     $('body').prepend(appView.render().$el);
